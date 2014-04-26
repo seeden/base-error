@@ -1,6 +1,6 @@
 {
 	"name": "base-error",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Base Error",
 	"author": {
 		"name": "Zlatko Fedor",
@@ -22,10 +22,22 @@
 			"url": "http://www.opensource.org/licenses/MIT"
 		}
 	],
-	"main": "./lib/",
 	"engines": {
 		"node": ">= 0.10.0"
 	},
+	"scripts": {
+		"test": "node node_modules/grunt-cli/bin/grunt test"
+	},
 	"dependencies": {
+	},
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-cli": "~0.1.11",
+		"grunt-env": "~0.4.1",
+		"grunt-mocha-test": "~0.8.1",
+		"should": "~2.1.1"
+	},
+	"bugs": {
+		"url": "https://github.com/seeden/base-error/issues"
 	}
 }

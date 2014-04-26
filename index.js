@@ -4,15 +4,12 @@ var util = require("util");
 
 function BaseError (message) {
 	Error.call(this);
-  	//Error.captureStackTrace(this, arguments.callee);
+  	Error.captureStackTrace(this, this.constructor);
 
-    //this.message = message;
-    //this.stack = (new Error()).stack;
+	this.className = this.constructor.name
+    this.message = message;
 }
 
 util.inherits(BaseError, Error);
-
-//BaseError.prototype = new Error; 
-
 
 module.exports = BaseError;

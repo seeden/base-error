@@ -31,11 +31,11 @@
 	"dependencies": {
 	},
 	"devDependencies": {
-		"grunt": "~0.4.2",
-		"grunt-cli": "~0.1.11",
+		"grunt": "~0.4.4",
+		"grunt-cli": "~0.1.13",
 		"grunt-env": "~0.4.1",
-		"grunt-mocha-test": "~0.8.1",
-		"should": "~2.1.1"
+		"grunt-mocha-test": "~0.10.2",
+		"should": "~3.3.1"
 	},
 	"bugs": {
 		"url": "https://github.com/seeden/base-error/issues"

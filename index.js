@@ -1,15 +1,33 @@
-'use strict';
+(function (root) {
+	'use strict';
 
-var util = require("util");
+	function BaseError (message) {
+		var err = new Error(message);
 
-function BaseError (message) {
-	Error.call(this);
-  	Error.captureStackTrace(this, this.constructor);
+		this.stack = err.stack;			
+		this.message = message;
+	}
 
-	this.className = this.constructor.name
-    this.message = message;
-}
+	BaseError.prototype = new Error(); 
+	BaseError.prototype.name = 'BaseError';
 
-util.inherits(BaseError, Error);
 
-module.exports = BaseError;
+	//Exports
+	//AMD
+	if (typeof define !== 'undefined' && define.amd) {
+		define([], function () {
+			return BaseError;
+		});
+	}
+
+	//CommonJS
+	else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = BaseError;
+	}
+
+	//Script tag
+	else {
+		root.BaseError = BaseError;
+	}
+
+} (this));

@@ -18,12 +18,12 @@ describe('<Unit Test>', function() {
 
 			error.should.have.property('stack');
 
-			error.should.have.property('className');
-			error.className.should.equal('BaseError');
+
+			error.should.have.property('name');
+			error.name.should.equal('BaseError');
 
 			(error instanceof Error).should.equal(true);
 			(error instanceof BaseError).should.equal(true);
-
 
 			done();
 		});

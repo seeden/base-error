@@ -18,9 +18,6 @@ describe('<Unit Test>', function() {
 
 			error.should.have.property('stack');
 
-			console.log(error.stack);
-
-
 			error.should.have.property('name');
 			error.name.should.equal('BaseError');
 

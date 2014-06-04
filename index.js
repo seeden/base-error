@@ -1,21 +1,22 @@
 (function (root) {
 	'use strict';
 
-	function BaseError (message) {
-		if(Error.captureStackTrace) {
-			Error.call(this);
- 			Error.captureStackTrace(this, BaseError);
-		} else {
-			var err = new Error(message);
-			this.stack = err.stack;
-		}
-
+	function BaseError (message, constructorOpt) {
+		this.captureStackTrace(constructorOpt || BaseError);
 		this.message = message;
 	}
 
 	BaseError.prototype = new Error(); 
 	BaseError.prototype.name = 'BaseError';
 
+	BaseError.prototype.captureStackTrace = function(constructorOpt) {
+		if(Error.captureStackTrace) {
+			Error.captureStackTrace(this, constructorOpt);
+		} else {
+			var err = new Error();
+			this.stack = err.stack;
+		}
+	};
 
 	//Exports
 	//AMD

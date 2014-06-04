@@ -2,9 +2,14 @@
 	'use strict';
 
 	function BaseError (message) {
-		var err = new Error(message);
+		if(Error.captureStackTrace) {
+			Error.call(this);
+ 			Error.captureStackTrace(this, BaseError);
+		} else {
+			var err = new Error(message);
+			this.stack = err.stack;
+		}
 
-		this.stack = err.stack;			
 		this.message = message;
 	}
 

@@ -29,7 +29,7 @@
 		"test"  : "npm run build && node ./node_modules/gulp/bin/gulp.js test",
 		"build" : "node ./node_modules/gulp/bin/gulp.js build"
 	},
-	"main": "./dist/",
+	"main": "dist/index.js",
 	"dependencies": {
 	},
 	"devDependencies": {

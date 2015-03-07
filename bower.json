@@ -1,14 +1,14 @@
 {
 	"name": "base-error",
 	"description": "Base Error",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"keywords": [
 		"error",
 		"extend"
 	],
 	"homepage": "https://github.com/seeden/base-error",
 	"main": [
-		"index.js"
+		"dist/index.js"
 	],
 	"ignore": [
 		".*"

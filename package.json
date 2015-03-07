@@ -1,6 +1,6 @@
 {
 	"name": "base-error",
-	"version": "2.0.2",
+	"version": "2.0.4",
 	"description": "Class extended from javascript Error with support for stack trace",
 	"author": {
 		"name": "Zlatko Fedor",

@@ -1,45 +1,49 @@
 {
-	"name": "base-error",
-	"version": "2.0.4",
-	"description": "Class extended from javascript Error with support for stack trace",
-	"author": {
-		"name": "Zlatko Fedor",
-		"email": "zfedor@gmail.com",
-		"url": "http://www.cherrysro.com/"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/seeden/base-error.git"
-	},
-	"keywords": [
-		"error",
-		"extend"
-	],
-	"private": false,
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/MIT"
-		}
-	],
-	"engines": {
-		"node": ">= 0.10.0"
-	},
-	"scripts": {
-		"test"  : "npm run build && node ./node_modules/gulp/bin/gulp.js test",
-		"build" : "node ./node_modules/gulp/bin/gulp.js build"
-	},
-	"main": "dist/index.js",
-	"dependencies": {
-	},
-	"devDependencies": {
-		"gulp": "~3.8.11",
-		"gulp-mocha": "~2.0.0",
-		"gulp-babel": "~4.0.0",
-		"should": "~5.0.1",
-		"babel": "~4.7.1"
-	},
-	"bugs": {
-		"url": "https://github.com/seeden/base-error/issues"
-	}
+  "name": "base-error",
+  "version": "2.0.5",
+  "description": "Class extended from javascript Error with support for stack trace",
+  "author": {
+    "name": "Zlatko Fedor",
+    "email": "zfedor@gmail.com",
+    "url": "http://www.cherrysro.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/seeden/base-error.git"
+  },
+  "keywords": [
+    "error",
+    "extend"
+  ],
+  "private": false,
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "test"  : "npm run build && node ./node_modules/gulp/bin/gulp.js test",
+    "build" : "node ./node_modules/gulp/bin/gulp.js build",
+    "eslint": "node ./node_modules/eslint/bin/eslint.js ./src/"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel": "~5.8.21",
+    "babel-eslint": "~3.1.26",
+    "eslint": "~1.0.0",
+    "gulp": "~3.9.0",
+    "gulp-babel": "~5.2.0",
+    "gulp-mocha": "~2.1.3",
+    "should": "~7.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/seeden/base-error/issues"
+  }
 }

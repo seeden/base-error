@@ -1,42 +1,48 @@
-"use strict";
+'use strict';
 
-var _createClass = (function () { function defineProperties(target, props) { for (var key in props) { var prop = props[key]; prop.configurable = true; if (prop.value) prop.writable = true; } Object.defineProperties(target, props); } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
 
-var _get = function get(object, property, receiver) { var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc && desc.writable) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _inherits = function (subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var BaseError = (function (_Error) {
-	function BaseError(message) {
-		_classCallCheck(this, BaseError);
+  _inherits(BaseError, _Error);
 
-		_get(Object.getPrototypeOf(BaseError.prototype), "constructor", this).call(this, message);
-		this.message = this.message || message;
-		if (!this.stack) {
-			this.captureStackTrace();
-		}
-	}
+  function BaseError(message) {
+    _classCallCheck(this, BaseError);
 
-	_inherits(BaseError, _Error);
+    _get(Object.getPrototypeOf(BaseError.prototype), 'constructor', this).call(this, message);
 
-	_createClass(BaseError, {
-		captureStackTrace: {
-			value: function captureStackTrace() {
-				if (Error.captureStackTrace) {
-					Error.captureStackTrace(this);
-				} else {
-					var err = new Error();
-					this.stack = err.stack;
-				}
-			}
-		}
-	});
+    this.message = this.message || message;
 
-	return BaseError;
+    if (!this.stack) {
+      this.captureStackTrace();
+    }
+  }
+
+  _createClass(BaseError, [{
+    key: 'captureStackTrace',
+    value: function captureStackTrace() {
+      if (Error.captureStackTrace) {
+        Error.captureStackTrace(this);
+      } else {
+        var err = new Error();
+        this.stack = err.stack;
+      }
+    }
+  }]);
+
+  return BaseError;
 })(Error);
 
-module.exports = BaseError;
+exports['default'] = BaseError;
 
-BaseError.prototype.name = "BaseError";
+BaseError.prototype.name = 'BaseError';
+module.exports = exports['default'];
